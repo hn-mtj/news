@@ -24,7 +24,7 @@ class PostSerializer(serializers.ModelSerializer):
     category1 = CategorySerializer(source='first_category')
     tags = TagSerializer(many=True)
 
-    def one_row(self, obj):
+    def one_row (self, obj):
         c = obj.category.first()
         serializer = CategorySerializer(instance=c)
         return serializer.data
